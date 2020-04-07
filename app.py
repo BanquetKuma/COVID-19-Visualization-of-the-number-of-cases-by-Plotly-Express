@@ -79,28 +79,21 @@ dimensions = ["size","color"]
 app = dash.Dash(__name__, external_stylesheets=["https://codepen.io/chriddyp/pen/bWLwgP.css"])
 server = app.server
 
-app.config['suppress_callback_exceptions']=True
+# app.config['suppress_callback_exceptions']=True
 
 app.layout = html.Div(
     [
         html.H1("COVID-19:Visualization of the number of cases by Plotly Express"),
-        html.Div(
-            [
-                html.P([d + ":", dcc.Dropdown(id=d, options=col_options)])
-                for d in dimensions
-            ],
-            style={"width": "25%", "float": "left"}
-        ),
         dcc.Graph(id="graph", style={"width": "100%", "display": "inline-block"}),
     ]
 )
 
-@app.callback(Output("graph", "figure"), [Input(d, "value") for d in dimensions])
-def make_figure():
+# @app.callback(Output("graph", "figure"), [Input(d, "value") for d in dimensions])
+def make_figure(df_all):
     # グラフの作成
     return px.choropleth(df_all, locations="iso_alpha", color="log(Infected person(per day))",\
                         hover_name="Country", animation_frame="Date", range_color=[0, 4], width=1000, height=800)
 
 #plotly_expressの描画部分
 if __name__ == '__main__':
-    app.run_server(debug=True)
+  app.run_server(debug=True)
