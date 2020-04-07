@@ -8,7 +8,7 @@ from dash.dependencies import Input, Output
 
 # 感染者数読み込み
 Confirmed_df = pd.read_csv("https://raw.githubusercontent.com/BanquetKuma/COVID-19-Visualization-of-the-number-of-cases-by-Plotly-Express\
-                           /master/time_series-ncov-Confirmed0122-0321.csv?token=AKZOM34XJ7LHCUC6FQNXZ626RR3S4",header=1)
+                           /master/countries_codes_and_coordinates.csv?token=AKZOM364HFHDJBJ23WA4WLK6RR33A",header=1)
 
 
 # 国名コード読み込み
