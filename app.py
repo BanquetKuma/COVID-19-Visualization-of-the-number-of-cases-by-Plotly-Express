@@ -7,11 +7,13 @@ import dash_core_components as dcc
 from dash.dependencies import Input, Output
 
 # 感染者数読み込み
-Confirmed_df = pd.read_csv("https://github.com/BanquetKuma/COVID-19-Visualization-of-the-number-of-cases-by-Plotly-Express\
-                            /blob/master/countries_codes_and_coordinates.csv",header=1)
+Confirmed_df = pd.read_csv("https://raw.githubusercontent.com/BanquetKuma/COVID-19-Visualization-of-the-number-of-cases-by-Plotly-Express\
+                           /master/time_series-ncov-Confirmed0122-0321.csv?token=AKZOM34XJ7LHCUC6FQNXZ626RR3S4",header=1)
+
 
 # 国名コード読み込み
-ISO_alpha_3_df = pd.read_csv("countries_codes_and_coordinates.csv",header=0)
+ISO_alpha_3_df = pd.read_csv("https://github.com/BanquetKuma/COVID-19-Visualization-of-the-number-of-cases-by-Plotly-Express\
+                            /blob/master/countries_codes_and_coordinates.csv",header=0)
 
 # 列名を変更
 Confirmed_df.rename(columns={'#adm1+name': 'State', '#country+name': 'Country',\
