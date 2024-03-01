@@ -1,7 +1,7 @@
   
 dash==1.0.0
 dash-core-components==1.0.0
-dash-html-components==1.0.0
+dash-html-components==2.0.0
 plotly 
 pandas
 numpy
